@@ -1,0 +1,268 @@
+/* ===========================
+   RESET & BASE
+=========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green-dark:   #1a5c2e;
+  --green-main:   #2d7a47;
+  --green-light:  #e8f5ee;
+  --green-mid:    #c6e8d2;
+  --green-accent: #3a9e5f;
+  --text-dark:    #1a1a1a;
+  --text-mid:     #444444;
+  --text-light:   #666666;
+  --white:        #ffffff;
+  --card-border:  #e0e0e0;
+  --footer-bg:    #1a2520;
+  --font:         'Poppins', sans-serif;
+  --radius:       10px;
+  --shadow:       0 2px 14px rgba(0,0,0,0.07);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  color: var(--text-dark);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+  width: 90%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--green-dark);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.banner-section{
+    background: linear-gradient(135deg,#0a7f3f,#16a34a);
+    color:#fff;
+    padding:120px 0 70px;
+    text-align:center;
+}
+
+/* animation base */
+.banner-title,
+.banner-subtitle{
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 1s ease forwards;
+}
+
+.banner-subtitle{
+    animation-delay:0.3s;
+}
+
+/* keyframes */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* title */
+.banner-section h1{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+/* subtitle */
+.banner-section h4{
+    font-size:18px;
+    opacity:0.95;
+}
+
+/* responsive */
+@media(max-width:768px){
+
+.banner-section{
+    padding:110px 15px 60px;
+}
+
+.banner-section h1{
+    font-size:28px;
+}
+
+.banner-section h4{
+    font-size:15px;
+}
+
+}
+
+/* ===== SERVICE SECTION ===== */
+
+.service-section{
+    background: linear-gradient(135deg,#f5faf7,#e6f4ec);
+    padding:70px 0;
+}
+
+.section-title{
+    font-weight:700;
+    color:#0a7f3f;
+    margin-bottom:10px;
+}
+
+.section-sub{
+    color:#666;
+    margin-bottom:40px;
+}
+
+/* card */
+.service-card{
+    background:#fff;
+    border-radius:15px;
+    padding:30px 20px;
+    text-align:center;
+    transition:.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    height:100%;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.service-icon{
+    width:70px;
+    height:70px;
+    line-height:70px;
+    margin:auto;
+    border-radius:50%;
+    background:#e8f6ee;
+    color:#0a7f3f;
+    font-size:28px;
+    margin-bottom:20px;
+    transition:.4s;
+}
+
+.service-card:hover .service-icon{
+    background:#0a7f3f;
+    color:#fff;
+}
+
+.service-card h5{
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.service-card p{
+    font-size:14px;
+    color:#666;
+}
+
+/* responsive */
+@media(max-width:768px){
+
+.service-section{
+    padding:50px 0;
+}
+
+.service-card{
+    margin-bottom:20px;
+}
+
+}
+
+/* ===========================
+   POPULAR TOUR PACKAGES
+=========================== */
+.packages-section {
+  background: var(--green-light);
+  padding: 80px 0;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.package-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+.package-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(45,122,71,0.15);
+}
+
+.package-header {
+  background: var(--green-main);
+  color: var(--white);
+  padding: 18px 20px 14px;
+  text-align: center;
+}
+.package-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.duration {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+}
+
+.package-body {
+  padding: 24px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 12px;
+  text-align: center;
+}
+
+.price {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--green-main);
+  letter-spacing: -0.5px;
+}
+
+.highlights {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.65;
+  flex: 1;
+}

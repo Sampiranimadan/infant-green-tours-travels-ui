@@ -1,61 +1,34 @@
-// // Load navbar
-// fetch("navbar.html")
-// .then(res => res.text())
-// .then(data => {
-//   document.getElementById("navbar").innerHTML = data;
-//   initScrollAnimation();
-// });
+document.addEventListener("DOMContentLoaded", function () {
 
-// function initScrollAnimation(){
+  /* load footer */
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
 
-//   const items = document.querySelectorAll(
-//     ".service-card, .choose-box, .destination-card, .about-section, .option-card, .faq-item, .booking-steps, .why-travel"
-//   );
-
-//   const observer = new IntersectionObserver((entries)=>{
-//     entries.forEach(entry=>{
-//       if(entry.isIntersecting){
-//         entry.target.classList.add("show");
-//       }else{
-//         entry.target.classList.remove("show"); // remove when leave
-//       }
-//     });
-//   }, { threshold: 0.15 });
-
-//   items.forEach(el => observer.observe(el));
-// }
-
-
-// /* Navbar scroll effect */
-// window.addEventListener("scroll", function(){
-//   const navbar = document.querySelector(".navbar");
-
-//   if(navbar){
-//     if(window.scrollY > 50){
-//       navbar.classList.add("scrolled");
-//     }else{
-//       navbar.classList.remove("scrolled");
-//     }
-//   }
-// });
-
-// // FAQ toggle
-// document.addEventListener("click", function(e){
-
-//   if(e.target.closest(".faq-question")){
-//     const item = e.target.closest(".faq-item");
-//     item.classList.toggle("active");
-//   }
-
-// });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
+
   fetch("navbar.html")
-    .then(response => response.text())
+    .then(res => res.text())
     .then(data => {
       document.getElementById("navbar").innerHTML = data;
+      setActiveMenu();
     });
+
 });
+
+function setActiveMenu(){
+  const currentPage = window.location.pathname.split("/").pop();
+
+  document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+    if(link.getAttribute("href") === currentPage){
+      link.classList.add("active");
+    }
+  });
+}
 
 window.addEventListener("scroll", function () {
   const about = document.querySelector(".about-section");
@@ -66,6 +39,17 @@ window.addEventListener("scroll", function () {
     about.classList.add("show");
   }
 });
+
+
+function toggleFaq(el) {
+  const item = el.parentElement;
+
+  document.querySelectorAll(".faq-item").forEach(faq => {
+    if (faq !== item) faq.classList.remove("active");
+  });
+
+  item.classList.toggle("active");
+}
 
 window.addEventListener("scroll", function () {
 
