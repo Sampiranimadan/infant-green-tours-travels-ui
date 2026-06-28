@@ -272,8 +272,8 @@ img { max-width: 100%; display: block; }
     font-family: var(--font);
     font-size: 0.9rem;
     color: var(--text-dark);
-    background: var(--input-bg);
-    border: 1px solid var(--border);
+    /* background: var(--input-bg);
+    border: 1px solid var(--border); */
     border-radius: var(--radius);
     padding: 13px 16px;
     outline: none;

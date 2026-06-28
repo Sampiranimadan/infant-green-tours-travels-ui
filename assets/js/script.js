@@ -69,3 +69,10 @@ window.addEventListener("scroll", function () {
   });
 
 });
+
+const myCarousel = document.querySelector('#testimonialCarousel');
+  new bootstrap.Carousel(myCarousel, {
+    interval: 3000,
+    ride: 'carousel',
+    pause: false
+  });

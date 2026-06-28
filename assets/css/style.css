@@ -130,11 +130,26 @@ img { max-width: 100%; display: block; }
     font-size: 18px;
   }
 
+  .nav-button{
+    margin-top: 10px;
+  }
+
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+
+  .nav-button{
+    margin-top: 10px;
+  }
+
 }
 
 .banner-img {
   height: 80vh;
+  width: 100%;
   object-fit: cover;
+  margin-top: 10px;
 }
 
 /* caption style */
@@ -156,6 +171,8 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   .banner-img {
     height: 60vh;
+    width: 100%;
+    margin-top: -10px;
   }
 
   .banner-caption h3 {
@@ -174,6 +191,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 576px) {
   .banner-img {
     height: 50vh;
+    width: 100%;
   }
 
   .banner-caption {
@@ -281,6 +299,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .service-card:hover {
@@ -352,6 +371,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
   transition: 0.4s;
   border: 1px solid white;
+  height: 100%;
 }
 
 .why-card:hover {
@@ -612,6 +632,81 @@ img { max-width: 100%; display: block; }
   width:100px;
 }
 
+}
+
+/* SECTION */
+.testimonial-modern {
+  background: linear-gradient(135deg,#367d53);
+  color: #fff;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* SLIDER */
+.testimonial-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+/* TRACK (ANIMATION) */
+.testimonial-track {
+  display: flex;
+  gap: 25px;
+  animation: scroll 20s linear infinite;
+}
+
+/* CARD */
+.testimonial-item {
+  min-width: 300px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: 0.4s;
+}
+
+/* HOVER */
+.testimonial-item:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.25);
+}
+
+/* PROFILE */
+.profile {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #fff;
+}
+
+/* TEXT */
+.testimonial-item p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* STARS */
+.stars {
+  margin: 5px 0;
+}
+
+/* ANIMATION */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .testimonial-item {
+    min-width: 250px;
+  }
 }
 
 .reveal {
